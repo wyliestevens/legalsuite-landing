@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
-  Scale,
   FileText,
   Clock,
   Users,
@@ -16,7 +15,6 @@ import {
   ChevronDown,
   CheckCircle2,
   ArrowRight,
-  Star,
   Menu,
   X,
   BarChart3,
@@ -35,6 +33,17 @@ import {
 const SIGNUP_URL =
   "http://legalsuite-prod2.eba-imjvmfeg.us-east-1.elasticbeanstalk.com/signup";
 
+function LSLogo({ className = "h-8 w-8" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className={className} xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="30" width="140" height="140" rx="6" ry="6"
+        transform="rotate(45 100 100)" fill="none" stroke="currentColor" strokeWidth="7" />
+      <text x="100" y="115" textAnchor="middle" fontFamily="'Helvetica Neue', Arial, sans-serif"
+        fontWeight="700" fontSize="60" fill="currentColor" letterSpacing="-1">LS</text>
+    </svg>
+  );
+}
+
 // ─── NAVIGATION ──────────────────────────────────
 function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -50,7 +59,7 @@ function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <Scale className="h-7 w-7 text-teal" />
+            <LSLogo className="h-7 w-7 text-teal" />
             <span className="text-xl font-bold text-navy-dark">
               Legal<span className="text-teal">Suite</span>
             </span>
@@ -130,7 +139,7 @@ function Hero() {
         >
           <Zap className="h-4 w-4 text-amber" />
           <span className="text-sm font-medium text-white/90">
-            The Only Legal Platform with Built-In AI Medical Chronology
+            AI Medical Chronology Built Into Every Case
           </span>
         </motion.div>
 
@@ -155,7 +164,7 @@ function Hero() {
           className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed"
         >
           Cases. Clients. Billing. Documents. Calendar. Messaging. Team management.
-          And the industry&apos;s first AI-powered medical chronology — all in a single,
+          Plus AI-powered medical chronology built right in — all in a single,
           HIPAA-ready platform built for personal injury firms.
         </motion.p>
 
@@ -345,8 +354,8 @@ function ChronologyShowcase() {
             </span>
           </h2>
           <p className="mt-4 text-lg text-white/60 max-w-2xl mx-auto">
-            No competitor has this. Turn thousands of pages of medical records into an
-            organized, verified chronology in minutes — not weeks.
+            Turn thousands of pages of medical records into an organized, verified
+            chronology in minutes — not weeks. No separate tool required.
           </p>
         </motion.div>
 
@@ -405,7 +414,7 @@ function ChronologyShowcase() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 text-teal mt-0.5 shrink-0" />
-                As low as $0.20/page
+                As low as $0.15/page
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 text-teal mt-0.5 shrink-0" />
@@ -417,6 +426,24 @@ function ChronologyShowcase() {
               </li>
             </ul>
           </div>
+        </motion.div>
+
+        {/* AI Disclaimer */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 max-w-3xl mx-auto p-5 rounded-xl bg-white/5 border border-white/10 text-center"
+        >
+          <p className="text-xs text-white/50 leading-relaxed">
+            <span className="font-semibold text-white/70">Important Disclaimer:</span>{" "}
+            LegalSuite&apos;s AI medical chronology is powered by Claude Opus 4.6 by Anthropic —
+            the most capable and accurate AI model available for medical record analysis.
+            However, AI can make mistakes. All chronology output must be reviewed and
+            verified by qualified personnel before inclusion in any documentation submitted
+            to courts or used in legal proceedings. LegalSuite is a tool to assist legal
+            professionals, not a substitute for professional medical or legal judgment.
+          </p>
         </motion.div>
       </div>
     </section>
@@ -603,7 +630,7 @@ function Pricing() {
     {
       name: "Starter",
       monthly: 49,
-      annual: 39,
+      annual: 44,
       desc: "For solo practitioners getting started",
       features: [
         "Full case management",
@@ -620,7 +647,7 @@ function Pricing() {
     {
       name: "Professional",
       monthly: 99,
-      annual: 79,
+      annual: 89,
       desc: "For growing firms that need AI power",
       features: [
         "Everything in Starter",
@@ -633,13 +660,13 @@ function Pricing() {
       ],
       chronology: true,
       chronologyPages: 500,
-      overage: 0.25,
+      overage: 0.18,
       popular: true,
     },
     {
       name: "Enterprise",
       monthly: 199,
-      annual: 159,
+      annual: 179,
       desc: "For large firms with high-volume needs",
       features: [
         "Everything in Professional",
@@ -652,7 +679,7 @@ function Pricing() {
       ],
       chronology: true,
       chronologyPages: 2000,
-      overage: 0.20,
+      overage: 0.15,
       popular: false,
     },
   ];
@@ -693,7 +720,7 @@ function Pricing() {
               onClick={() => setAnnual(true)}
             >
               Annual
-              <span className="ml-1.5 text-xs font-bold text-amber">Save 20%</span>
+              <span className="ml-1.5 text-xs font-bold text-amber">Save 10%</span>
             </button>
           </div>
         </motion.div>
@@ -767,8 +794,8 @@ function Pricing() {
             Need Chronology on the Starter Plan?
           </h3>
           <p className="text-sm text-white/70 mb-4">
-            Add AI Medical Chronology to any plan for just $0.30/page with no monthly minimum.
-            A typical 300-page case costs about $90 — compared to $1,000+ the traditional way.
+            Add AI Medical Chronology to any plan for just $0.20/page with no monthly minimum.
+            A typical 300-page case costs about $60 — compared to $1,000+ the traditional way.
           </p>
           <a
             href={SIGNUP_URL}
@@ -784,78 +811,6 @@ function Pricing() {
 }
 
 // ─── TESTIMONIALS ────────────────────────────────
-function Testimonials() {
-  const testimonials = [
-    {
-      quote:
-        "We used to spend $2,000 per medical chronology with an outside service. LegalSuite's AI does it for a fraction of the cost and it's integrated right into our case files.",
-      name: "Sarah Martinez",
-      title: "Managing Partner, Martinez & Associates",
-      rating: 5,
-    },
-    {
-      quote:
-        "Switching from Clio saved us money, but the real game-changer was having everything — cases, billing, documents, messaging — all in one platform. No more context switching.",
-      name: "Rachel Thompson",
-      title: "Attorney, Thompson Family Law",
-      rating: 5,
-    },
-    {
-      quote:
-        "As a legal nurse consultant, I needed a platform that understands medical records. LegalSuite is the only one that truly does. The AI chronology feature alone is worth the subscription.",
-      name: "Jennifer Walsh",
-      title: "Legal Nurse Consultant",
-      rating: 5,
-    },
-  ];
-
-  return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-dark">
-            Trusted by{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal to-emerald">
-              Legal Professionals
-            </span>
-          </h2>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-2xl bg-gray-light border border-gray-border"
-            >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-amber text-amber" />
-                ))}
-              </div>
-              <p className="text-navy-dark/70 text-sm leading-relaxed mb-5 italic">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div>
-                <p className="font-bold text-navy-dark text-sm">{t.name}</p>
-                <p className="text-xs text-navy-dark/50">{t.title}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // ─── FAQ ─────────────────────────────────────────
 function FAQ() {
   const faqs = [
@@ -865,11 +820,11 @@ function FAQ() {
     },
     {
       q: "How does the AI medical chronology work?",
-      a: "Upload your medical records as PDFs (up to 10,000+ pages). Our AI, powered by AWS Bedrock, performs three passes: extraction (identifies dates, providers, diagnoses, treatments), verification (cross-references for accuracy), and annotation (adds clinical context). You get a complete, organized chronology in minutes.",
+      a: "Upload your medical records as PDFs (up to 10,000+ pages). Our AI — powered by Claude Opus 4.6 by Anthropic, the most accurate model available for this work — performs three passes: extraction (identifies dates, providers, diagnoses, treatments), verification (cross-references for accuracy), and annotation (adds clinical context). You get a complete, organized chronology in minutes. Important: While our AI is highly accurate, it can make mistakes. All chronology output must be reviewed and verified by qualified personnel before inclusion in any court filings or legal documentation.",
     },
     {
       q: "How much does the AI chronology cost per page?",
-      a: "Professional plan includes 500 pages/month with additional pages at just $0.25 each. Enterprise includes 2,000 pages/month at $0.20/page for overage. Starter plan users can add chronology at $0.30/page with no minimum. A typical 300-page case costs about $75-$90 with LegalSuite vs. $1,000-$2,000 for a paralegal to do it manually.",
+      a: "Professional plan includes 500 pages/month with additional pages at just $0.18 each. Enterprise includes 2,000 pages/month at $0.15/page for overage. Starter plan users can add chronology at $0.20/page with no minimum. A typical 300-page case costs about $45-$60 with LegalSuite vs. $1,000-$2,000 for a paralegal to do it manually.",
     },
     {
       q: "Can I migrate from Clio, MyCase, or PracticePanther?",
@@ -970,7 +925,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <Scale className="h-6 w-6 text-teal" />
+            <LSLogo className="h-6 w-6 text-teal" />
             <span className="text-lg font-bold text-white">
               Legal<span className="text-teal">Suite</span>
             </span>
@@ -1022,7 +977,7 @@ export default function Home() {
       <PlatformFeatures />
       <BuiltForPI />
       <Pricing />
-      <Testimonials />
+
       <FAQ />
       <FinalCTA />
       <Footer />
