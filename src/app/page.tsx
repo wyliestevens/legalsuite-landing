@@ -30,8 +30,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 
-const SIGNUP_URL =
-  "http://legalsuite-prod2.eba-imjvmfeg.us-east-1.elasticbeanstalk.com/signup";
+const SIGNUP_URL = "https://app.legalsuiteapp.com/signup";
 const DEMO_URL =
   "https://link.aipeakbiz.com/widget/bookings/legalsuiteapp-demo";
 
@@ -281,12 +280,12 @@ function ProblemStatement() {
     {
       icon: FileText,
       title: "Manual Chronologies",
-      desc: "Paralegals spend 20-40 hours per medical chronology. At $50/hr, that's $1,000-$2,000 per case — before the attorney even looks at it.",
+      desc: "Paralegals spend 20-40 hours per medical chronology. At $50/hr, that\u2019s $1,000-$2,000 per case \u2014 before the attorney even looks at it.",
     },
     {
       icon: DollarSign,
       title: "Expensive Software",
-      desc: "Legacy legal software charges $100+ per user per month and still doesn't include chronology tools. You're paying more for less.",
+      desc: "Legacy legal software charges $100+ per user per month and still doesn\u2019t include chronology tools. You\u2019re paying more for less.",
     },
   ];
   return (
@@ -339,7 +338,7 @@ function ChronologyShowcase() {
     {
       num: "01",
       title: "Upload Medical Records",
-      desc: "Drag and drop PDFs — up to 10,000+ pages. Supports hospital records, imaging reports, physician notes, and more.",
+      desc: "Drag and drop PDFs \u2014 up to 10,000+ pages. Supports hospital records, imaging reports, physician notes, and more.",
     },
     {
       num: "02",
@@ -470,382 +469,92 @@ function ChronologyShowcase() {
   );
 }
 
-// ─── FEATURE MINI-APP ILLUSTRATIONS ─────────────
-// Each feature gets a unique mini-app mockup SVG that looks like a real screen
-function FeatureIllustration({ type }: { type: string }) {
-  const illustrations: Record<string, React.ReactNode> = {
-    cases: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#0D9488"/>
-        <rect x="0" y="10" width="120" height="6" fill="#0D9488"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Cases</text>
-        <circle cx="110" cy="8" r="3" fill="#059669"/>
-        <rect x="6" y="22" width="50" height="5" rx="1" fill="#0D9488" opacity="0.15"/>
-        <rect x="6" y="30" width="108" height="10" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <circle cx="12" cy="35" r="2.5" fill="#10B981"/>
-        <text x="18" y="36.5" fontSize="3.5" fill="#334155">Martinez v. General Hospital</text>
-        <rect x="90" y="33" width="18" height="4" rx="1" fill="#DCFCE7"/>
-        <text x="92" y="36" fontSize="2.5" fill="#16A34A">Active</text>
-        <rect x="6" y="43" width="108" height="10" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <circle cx="12" cy="48" r="2.5" fill="#F59E0B"/>
-        <text x="18" y="49.5" fontSize="3.5" fill="#334155">Thompson v. City Medical</text>
-        <rect x="90" y="46" width="18" height="4" rx="1" fill="#FEF3C7"/>
-        <text x="92.5" y="49" fontSize="2.5" fill="#D97706">Review</text>
-        <rect x="6" y="56" width="108" height="10" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <circle cx="12" cy="61" r="2.5" fill="#0D9488"/>
-        <text x="18" y="62.5" fontSize="3.5" fill="#334155">Sterling Corp Litigation</text>
-        <rect x="90" y="59" width="18" height="4" rx="1" fill="#E0F2FE"/>
-        <text x="93" y="62" fontSize="2.5" fill="#0284C7">New</text>
-        <rect x="6" y="69" width="108" height="8" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5" opacity="0.5"/>
-      </svg>
-    ),
-    crm: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#1E3A5F"/>
-        <rect x="0" y="10" width="120" height="6" fill="#1E3A5F"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Contacts</text>
-        <rect x="6" y="22" width="30" height="52" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <circle cx="21" cy="33" r="7" fill="#0D9488" opacity="0.15"/>
-        <text x="21" y="35" textAnchor="middle" fontSize="6" fill="#0D9488" fontWeight="700">SM</text>
-        <text x="21" y="45" textAnchor="middle" fontSize="3" fill="#334155" fontWeight="600">Sarah M.</text>
-        <text x="21" y="49" textAnchor="middle" fontSize="2.5" fill="#94A3B8">Attorney</text>
-        <rect x="11" y="54" width="20" height="3" rx="1" fill="#DCFCE7"/>
-        <text x="14" y="56.2" fontSize="2" fill="#16A34A">3 Active Cases</text>
-        <rect x="11" y="60" width="20" height="3" rx="1" fill="#E0F2FE"/>
-        <text x="14" y="62.2" fontSize="2" fill="#0284C7">12 Documents</text>
-        <rect x="40" y="22" width="74" height="24" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="46" y="30" fontSize="3.5" fill="#334155" fontWeight="600">Recent Activity</text>
-        <rect x="46" y="33" width="62" height="0.5" fill="#E2E8F0"/>
-        <circle cx="49" cy="38" r="1.5" fill="#10B981"/>
-        <text x="53" y="39" fontSize="2.5" fill="#64748B">Document uploaded — 2 min ago</text>
-        <circle cx="49" cy="43" r="1.5" fill="#0D9488"/>
-        <text x="53" y="44" fontSize="2.5" fill="#64748B">Case note added — 1 hr ago</text>
-        <rect x="40" y="50" width="74" height="24" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="46" y="58" fontSize="3.5" fill="#334155" fontWeight="600">Contact Info</text>
-        <rect x="46" y="61" width="62" height="0.5" fill="#E2E8F0"/>
-        <text x="46" y="66" fontSize="2.5" fill="#64748B">sarah.martinez@martinezlaw.com</text>
-        <text x="46" y="70" fontSize="2.5" fill="#64748B">(555) 234-5678</text>
-      </svg>
-    ),
-    billing: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#059669"/>
-        <rect x="0" y="10" width="120" height="6" fill="#059669"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Billing</text>
-        <rect x="6" y="22" width="34" height="22" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="10" y="29" fontSize="2.5" fill="#94A3B8">Revenue MTD</text>
-        <text x="10" y="37" fontSize="7" fill="#059669" fontWeight="700">$24.8k</text>
-        <rect x="43" y="22" width="34" height="22" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="47" y="29" fontSize="2.5" fill="#94A3B8">Outstanding</text>
-        <text x="47" y="37" fontSize="7" fill="#F59E0B" fontWeight="700">$8.2k</text>
-        <rect x="80" y="22" width="34" height="22" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="84" y="29" fontSize="2.5" fill="#94A3B8">Paid</text>
-        <text x="84" y="37" fontSize="7" fill="#0D9488" fontWeight="700">$16.6k</text>
-        <rect x="6" y="48" width="108" height="28" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="10" y="56" fontSize="3" fill="#334155" fontWeight="600">Recent Invoices</text>
-        <rect x="10" y="59" width="100" height="0.5" fill="#E2E8F0"/>
-        <text x="10" y="65" fontSize="2.5" fill="#334155">INV-2026-042</text>
-        <text x="55" y="65" fontSize="2.5" fill="#64748B">Martinez</text>
-        <text x="88" y="65" fontSize="2.5" fill="#059669" fontWeight="600">$3,200</text>
-        <text x="10" y="71" fontSize="2.5" fill="#334155">INV-2026-041</text>
-        <text x="55" y="71" fontSize="2.5" fill="#64748B">Thompson</text>
-        <text x="88" y="71" fontSize="2.5" fill="#F59E0B" fontWeight="600">$1,850</text>
-      </svg>
-    ),
-    documents: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#6366F1"/>
-        <rect x="0" y="10" width="120" height="6" fill="#6366F1"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Documents</text>
-        <rect x="6" y="22" width="25" height="25" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <rect x="10" y="26" width="17" height="3" rx="0.5" fill="#EEF2FF"/>
-        <rect x="10" y="30" width="14" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="10" y="32" width="16" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="10" y="34" width="12" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="10" y="37" width="8" height="3" rx="1" fill="#6366F1" opacity="0.2"/>
-        <text x="11.5" y="39.2" fontSize="2" fill="#6366F1">PDF</text>
-        <rect x="34" y="22" width="25" height="25" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <rect x="38" y="26" width="17" height="3" rx="0.5" fill="#FEF3C7"/>
-        <rect x="38" y="30" width="14" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="38" y="32" width="16" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="38" y="34" width="12" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="38" y="37" width="8" height="3" rx="1" fill="#F59E0B" opacity="0.2"/>
-        <text x="39" y="39.2" fontSize="2" fill="#D97706">DOC</text>
-        <rect x="62" y="22" width="25" height="25" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <rect x="66" y="26" width="17" height="3" rx="0.5" fill="#DCFCE7"/>
-        <rect x="66" y="30" width="14" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="66" y="32" width="16" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="66" y="34" width="12" height="1" fill="#CBD5E1" opacity="0.5"/>
-        <rect x="66" y="37" width="8" height="3" rx="1" fill="#10B981" opacity="0.2"/>
-        <text x="67" y="39.2" fontSize="2" fill="#059669">IMG</text>
-        <rect x="90" y="22" width="25" height="25" rx="3" fill="white" stroke="#0D9488" strokeWidth="1" strokeDasharray="2 1"/>
-        <text x="102.5" y="37" textAnchor="middle" fontSize="8" fill="#0D9488">+</text>
-        <rect x="6" y="52" width="108" height="22" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="10" y="60" fontSize="3" fill="#334155" fontWeight="600">Recent Uploads</text>
-        <rect x="10" y="63" width="100" height="0.5" fill="#E2E8F0"/>
-        <text x="10" y="68" fontSize="2.5" fill="#334155">medical_records_martinez.pdf</text>
-        <text x="90" y="68" fontSize="2.5" fill="#64748B">2.4 MB</text>
-      </svg>
-    ),
-    calendar: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#0D9488"/>
-        <rect x="0" y="10" width="120" height="6" fill="#0D9488"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">March 2026</text>
-        {["M","T","W","T","F","S","S"].map((d,i) => (
-          <text key={i} x={10+i*15.5} y="24" textAnchor="middle" fontSize="3" fill="#94A3B8">{d}</text>
-        ))}
-        {Array.from({length: 31}, (_,i) => {
-          const row = Math.floor((i+2)/7);
-          const col = (i+2) % 7;
-          const isToday = i === 23;
-          const hasEvent = [4,11,15,23,27].includes(i);
-          return (
-            <g key={i}>
-              <rect x={2+col*15.5} y={27+row*9.5} width="13" height="8" rx="2"
-                fill={isToday ? "#0D9488" : hasEvent ? "#F0FDFA" : "white"}
-                stroke={hasEvent && !isToday ? "#0D9488" : "#E2E8F0"} strokeWidth="0.5"/>
-              <text x={8.5+col*15.5} y={32+row*9.5} textAnchor="middle" fontSize="3.5"
-                fill={isToday ? "white" : "#334155"}>{i+1}</text>
-              {hasEvent && !isToday && <circle cx={8.5+col*15.5} cy={33.5+row*9.5} r="0.8" fill="#0D9488"/>}
-            </g>
-          );
-        })}
-      </svg>
-    ),
-    messaging: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#0F172A"/>
-        <rect x="0" y="10" width="120" height="6" fill="#0F172A"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Messages</text>
-        <circle cx="110" cy="8" r="4" fill="#EF4444"/>
-        <text x="110" y="9.5" textAnchor="middle" fontSize="3.5" fill="white" fontWeight="700">3</text>
-        <rect x="6" y="22" width="65" height="12" rx="6" fill="#0D9488"/>
-        <text x="12" y="29.5" fontSize="3" fill="white">Updated the chronology for Martinez case</text>
-        <text x="12" y="23.5" fontSize="2" fill="white" opacity="0.7">Sarah M. — 2:34 PM</text>
-        <rect x="49" y="38" width="65" height="12" rx="6" fill="#E2E8F0"/>
-        <text x="55" y="45.5" fontSize="3" fill="#334155">Looks great, sending to the client now</text>
-        <text x="55" y="39.5" fontSize="2" fill="#64748B">You — 2:36 PM</text>
-        <rect x="6" y="54" width="55" height="12" rx="6" fill="#0D9488"/>
-        <text x="12" y="61.5" fontSize="3" fill="white">Meeting rescheduled to Thursday</text>
-        <text x="12" y="55.5" fontSize="2" fill="white" opacity="0.7">Rachel T. — 2:41 PM</text>
-        <rect x="6" y="70" width="108" height="7" rx="3.5" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="12" y="74.5" fontSize="3" fill="#94A3B8">Type a message...</text>
-      </svg>
-    ),
-    time: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#7C3AED"/>
-        <rect x="0" y="10" width="120" height="6" fill="#7C3AED"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Time Tracking</text>
-        <rect x="6" y="22" width="50" height="20" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="31" y="29" textAnchor="middle" fontSize="2.5" fill="#94A3B8">Today</text>
-        <text x="31" y="38" textAnchor="middle" fontSize="10" fill="#7C3AED" fontWeight="700">4:32</text>
-        <rect x="60" y="22" width="54" height="20" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="87" y="29" textAnchor="middle" fontSize="2.5" fill="#94A3B8">This Week</text>
-        <text x="87" y="38" textAnchor="middle" fontSize="10" fill="#059669" fontWeight="700">22:15</text>
-        <rect x="6" y="46" width="108" height="9" rx="3" fill="white" stroke="#7C3AED" strokeWidth="1"/>
-        <circle cx="14" cy="50.5" r="3" fill="#7C3AED"/>
-        <rect x="11.5" y="49" width="5" height="3" rx="0" fill="#7C3AED"/>
-        <rect x="13" y="48" width="1" height="2" fill="white"/>
-        <rect x="13" y="49" width="2.5" height="1" fill="white"/>
-        <text x="21" y="52" fontSize="3.5" fill="#334155" fontWeight="600">Martinez — Research</text>
-        <text x="90" y="52" fontSize="3.5" fill="#7C3AED" fontWeight="700">1:24</text>
-        <rect x="6" y="58" width="108" height="8" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="12" y="63.5" fontSize="3" fill="#334155">Thompson — Document Review</text>
-        <text x="92" y="63.5" fontSize="3" fill="#64748B">2:08</text>
-        <rect x="6" y="69" width="108" height="8" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="12" y="74.5" fontSize="3" fill="#334155">Sterling — Client Call</text>
-        <text x="92" y="74.5" fontSize="3" fill="#64748B">1:00</text>
-      </svg>
-    ),
-    analytics: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#0D9488"/>
-        <rect x="0" y="10" width="120" height="6" fill="#0D9488"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Dashboard</text>
-        <rect x="6" y="22" width="108" height="30" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="10" y="29" fontSize="2.5" fill="#94A3B8">Revenue (6 months)</text>
-        {[18,22,19,28,25,32].map((h,i) => (
-          <rect key={i} x={14+i*16} y={48-h} width="10" height={h} rx="2" fill={i===5?"#0D9488":"#0D9488"} opacity={i===5?1:0.3+i*0.12}/>
-        ))}
-        <rect x="6" y="56" width="52" height="18" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="10" y="63" fontSize="2.5" fill="#94A3B8">Active Cases</text>
-        <text x="10" y="70" fontSize="8" fill="#334155" fontWeight="700">47</text>
-        <text x="30" y="70" fontSize="3" fill="#10B981">↑ 12%</text>
-        <rect x="62" y="56" width="52" height="18" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <text x="66" y="63" fontSize="2.5" fill="#94A3B8">Team Utilization</text>
-        <text x="66" y="70" fontSize="8" fill="#334155" fontWeight="700">84%</text>
-        <text x="88" y="70" fontSize="3" fill="#10B981">↑ 5%</text>
-      </svg>
-    ),
-    search: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="6" y="6" width="108" height="14" rx="7" fill="white" stroke="#0D9488" strokeWidth="1.5"/>
-        <circle cx="16" cy="13" r="4" fill="none" stroke="#0D9488" strokeWidth="1.2"/>
-        <line x1="19" y1="16" x2="22" y2="18.5" stroke="#0D9488" strokeWidth="1.2" strokeLinecap="round"/>
-        <text x="26" y="15" fontSize="4" fill="#334155">martinez medical</text>
-        <rect x="6" y="25" width="108" height="13" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <rect x="10" y="28" width="14" height="4" rx="1" fill="#DCFCE7"/>
-        <text x="12" y="31" fontSize="2.5" fill="#16A34A">Case</text>
-        <text x="28" y="33" fontSize="3.5" fill="#334155" fontWeight="600">Martinez v. General Hospital</text>
-        <rect x="6" y="41" width="108" height="13" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <rect x="10" y="44" width="14" height="4" rx="1" fill="#EEF2FF"/>
-        <text x="11.5" y="47" fontSize="2.5" fill="#6366F1">Doc</text>
-        <text x="28" y="49" fontSize="3.5" fill="#334155" fontWeight="600">medical_records_martinez.pdf</text>
-        <rect x="6" y="57" width="108" height="13" rx="4" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-        <rect x="10" y="60" width="14" height="4" rx="1" fill="#FEF3C7"/>
-        <text x="10.5" y="63" fontSize="2.5" fill="#D97706">Client</text>
-        <text x="28" y="65" fontSize="3.5" fill="#334155" fontWeight="600">Sarah Martinez</text>
-      </svg>
-    ),
-    team: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#0F172A"/>
-        <rect x="0" y="10" width="120" height="6" fill="#0F172A"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Team</text>
-        {[
-          {init:"SM",name:"Sarah M.",role:"Attorney",color:"#0D9488"},
-          {init:"RT",name:"Rachel T.",role:"Paralegal",color:"#6366F1"},
-          {init:"WS",name:"William S.",role:"Admin",color:"#F59E0B"},
-          {init:"JD",name:"James D.",role:"Staff",color:"#EF4444"},
-        ].map((m,i) => (
-          <g key={i}>
-            <rect x="6" y={22+i*14} width="108" height="12" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-            <circle cx="16" cy={28+i*14} r="4" fill={m.color} opacity="0.15"/>
-            <text x="16" y={29.5+i*14} textAnchor="middle" fontSize="3.5" fill={m.color} fontWeight="700">{m.init}</text>
-            <text x="26" y={29+i*14} fontSize="3.5" fill="#334155" fontWeight="600">{m.name}</text>
-            <rect x="62" y={26+i*14} width="20" height="4" rx="1" fill={m.color} opacity="0.1"/>
-            <text x="64" y={29+i*14} fontSize="2.5" fill={m.color}>{m.role}</text>
-            <circle cx="100" cy={28+i*14} r="2" fill="#10B981"/>
-            <text x="104" y={29+i*14} fontSize="2.5" fill="#64748B">Online</text>
-          </g>
-        ))}
-      </svg>
-    ),
-    notifications: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#F59E0B"/>
-        <rect x="0" y="10" width="120" height="6" fill="#F59E0B"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Notifications</text>
-        <circle cx="110" cy="8" r="4" fill="#EF4444"/>
-        <text x="110" y="9.5" textAnchor="middle" fontSize="3.5" fill="white" fontWeight="700">5</text>
-        {[
-          {icon:"📋",text:"New case assigned: Sterling Corp",time:"2 min",bg:"#EEF2FF"},
-          {icon:"💰",text:"Invoice INV-042 paid — $3,200",time:"15 min",bg:"#DCFCE7"},
-          {icon:"📅",text:"Deposition tomorrow at 9:00 AM",time:"1 hr",bg:"#FEF3C7"},
-          {icon:"💬",text:"New message from Rachel T.",time:"2 hr",bg:"#F0FDFA"},
-        ].map((n,i) => (
-          <g key={i}>
-            <rect x="6" y={22+i*14} width="108" height="12" rx="3" fill={n.bg} stroke="#E2E8F0" strokeWidth="0.3"/>
-            <text x="12" y={29.5+i*14} fontSize="6">{n.icon}</text>
-            <text x="22" y={28.5+i*14} fontSize="3" fill="#334155" fontWeight="500">{n.text}</text>
-            <text x="100" y={28.5+i*14} fontSize="2.5" fill="#94A3B8">{n.time}</text>
-          </g>
-        ))}
-      </svg>
-    ),
-    security: (
-      <svg viewBox="0 0 120 80" className="w-full h-full">
-        <rect x="0" y="0" width="120" height="80" rx="6" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1"/>
-        <rect x="0" y="0" width="120" height="16" rx="6" fill="#10B981"/>
-        <rect x="0" y="10" width="120" height="6" fill="#10B981"/>
-        <text x="8" y="11" fontSize="5" fill="white" fontWeight="600">Security</text>
-        {[
-          {label:"HIPAA Compliance",status:"Active",color:"#10B981"},
-          {label:"AES-256 Encryption",status:"Enabled",color:"#10B981"},
-          {label:"Two-Factor Auth",status:"Enabled",color:"#10B981"},
-          {label:"Audit Trail",status:"Recording",color:"#0D9488"},
-          {label:"AWS BAA",status:"Signed",color:"#10B981"},
-        ].map((s,i) => (
-          <g key={i}>
-            <rect x="6" y={22+i*11} width="108" height="9" rx="3" fill="white" stroke="#E2E8F0" strokeWidth="0.5"/>
-            <rect x="10" y={24.5+i*11} width="4" height="4" rx="2" fill={s.color}/>
-            <text x="11.8" y={27.7+i*11} fontSize="3" fill="white" fontWeight="700">✓</text>
-            <text x="18" y={28+i*11} fontSize="3.5" fill="#334155">{s.label}</text>
-            <rect x="88" y={24.5+i*11} width="22" height="4" rx="1" fill={s.color} opacity="0.1"/>
-            <text x="90" y={27.5+i*11} fontSize="2.5" fill={s.color} fontWeight="600">{s.status}</text>
-          </g>
-        ))}
-      </svg>
-    ),
-  };
-  return <>{illustrations[type] || null}</>;
-}
-
 // ─── PLATFORM FEATURES ───────────────────────────
 function PlatformFeatures() {
   const features = [
     {
-      type: "cases",
+      icon: Briefcase,
       title: "Case Management",
       desc: "Track every case from intake to settlement. Milestones, status updates, and automatic workflows keep your team aligned.",
+      from: "#0D9488",
+      to: "#059669",
     },
     {
-      type: "crm",
+      icon: Users,
       title: "Client & Contact CRM",
       desc: "Complete client profiles with case history, documents, and communication log. Client portal gives clients 24/7 visibility.",
+      from: "#1E3A5F",
+      to: "#3B82F6",
     },
     {
-      type: "billing",
+      icon: Receipt,
       title: "Billing & Invoicing",
       desc: "Time tracking, invoice generation, PDF exports, and payment processing. Three-tier pricing with Stripe integration.",
+      from: "#059669",
+      to: "#10B981",
     },
     {
-      type: "documents",
+      icon: FileText,
       title: "Document Management",
-      desc: "Upload, organize, and share documents securely. Support for PDF, DOC, images, and more — all encrypted at rest.",
+      desc: "Upload, organize, and share documents securely. Support for PDF, DOC, images, and more \u2014 all encrypted at rest.",
+      from: "#6366F1",
+      to: "#8B5CF6",
     },
     {
-      type: "calendar",
+      icon: Calendar,
       title: "Calendar & Scheduling",
       desc: "Firm-wide calendar with case-linked events. Create, edit, and coordinate deadlines across your entire team.",
+      from: "#0891B2",
+      to: "#0D9488",
     },
     {
-      type: "messaging",
+      icon: MessageSquare,
       title: "Real-Time Messaging",
       desc: "Built-in WebSocket messaging between team members. No more switching to Slack or email for internal communication.",
+      from: "#334155",
+      to: "#64748B",
     },
     {
-      type: "time",
+      icon: Clock,
       title: "Time Tracking",
       desc: "Track billable hours by case and activity. One-click timers and manual entry with automatic invoice linking.",
+      from: "#7C3AED",
+      to: "#A855F7",
     },
     {
-      type: "analytics",
+      icon: BarChart3,
       title: "Analytics Dashboard",
       desc: "Real-time metrics on cases, revenue, billing, and team productivity. Know exactly how your firm is performing.",
+      from: "#0D9488",
+      to: "#059669",
     },
     {
-      type: "search",
+      icon: Search,
       title: "Global Search",
-      desc: "Find any case, client, document, or invoice instantly with full-text search across your entire firm's data.",
+      desc: "Find any case, client, document, or invoice instantly with full-text search across your entire firm\u2019s data.",
+      from: "#0284C7",
+      to: "#0D9488",
     },
     {
-      type: "team",
+      icon: Users,
       title: "Team Management",
-      desc: "Invite team members, assign roles, manage permissions. Attorneys, paralegals, and staff — everyone in one place.",
+      desc: "Invite team members, assign roles, manage permissions. Attorneys, paralegals, and staff \u2014 everyone in one place.",
+      from: "#0F172A",
+      to: "#1E3A5F",
     },
     {
-      type: "notifications",
+      icon: Bell,
       title: "Notifications",
       desc: "Email and in-app notifications for case updates, deadlines, messages, and billing events. Never miss a beat.",
+      from: "#D97706",
+      to: "#F59E0B",
     },
     {
-      type: "security",
+      icon: Shield,
       title: "Security & HIPAA",
       desc: "AES-256 encryption, TLS 1.3, role-based access control, 2FA, audit trails, and AWS infrastructure with BAA.",
+      from: "#10B981",
+      to: "#0D9488",
     },
   ];
 
@@ -880,12 +589,34 @@ function PlatformFeatures() {
               transition={{ delay: (i % 4) * 0.05 }}
               className="bg-white rounded-2xl border border-gray-border hover:border-teal/30 hover:shadow-lg hover:shadow-teal/5 transition-all group overflow-hidden"
             >
-              <div className="p-3 pb-0">
-                <div className="rounded-lg overflow-hidden border border-gray-200/50 shadow-sm">
-                  <FeatureIllustration type={f.type} />
+              {/* Gradient header with semi-transparent icon */}
+              <div
+                className="relative h-36 overflow-hidden"
+                style={{ background: `linear-gradient(135deg, ${f.from}, ${f.to})` }}
+              >
+                {/* Decorative circles */}
+                <div
+                  className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-20"
+                  style={{ background: `radial-gradient(circle, white 0%, transparent 70%)` }}
+                />
+                <div
+                  className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full opacity-10"
+                  style={{ background: `radial-gradient(circle, white 0%, transparent 70%)` }}
+                />
+                {/* Large semi-transparent background icon */}
+                <f.icon
+                  className="absolute right-3 top-1/2 -translate-y-1/2 h-28 w-28 text-white/[0.15]"
+                  strokeWidth={0.75}
+                />
+                {/* Small solid icon badge */}
+                <div className="absolute left-4 bottom-4">
+                  <div className="h-11 w-11 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center">
+                    <f.icon className="h-5 w-5" style={{ color: f.from }} />
+                  </div>
                 </div>
               </div>
-              <div className="p-4 pt-3">
+              {/* Text content */}
+              <div className="p-5 pt-4">
                 <h3 className="text-base font-bold text-navy-dark mb-1.5">{f.title}</h3>
                 <p className="text-sm text-navy-dark/60 leading-relaxed">{f.desc}</p>
               </div>
@@ -903,7 +634,7 @@ function BuiltForPI() {
     {
       icon: Stethoscope,
       title: "Medical Chronology Integration",
-      desc: "The only platform where your AI chronologies live right next to case files, client records, and billing — no exports needed.",
+      desc: "The only platform where your AI chronologies live right next to case files, client records, and billing \u2014 no exports needed.",
     },
     {
       icon: Heart,
@@ -913,7 +644,7 @@ function BuiltForPI() {
     {
       icon: Award,
       title: "Competitive Edge",
-      desc: "Competitors charge $150 to $300+ per hour for medical chronology services. LegalSuite gives you AI-powered chronologies for pennies per page — saving your firm thousands on every case.",
+      desc: "Competitors charge $150 to $300+ per hour for medical chronology services. LegalSuite gives you AI-powered chronologies for pennies per page \u2014 saving your firm thousands on every case.",
     },
   ];
   return (
@@ -1149,17 +880,16 @@ function Pricing() {
   );
 }
 
-// ─── TESTIMONIALS ────────────────────────────────
 // ─── FAQ ─────────────────────────────────────────
 function FAQ() {
   const faqs = [
     {
       q: "Is LegalSuite HIPAA compliant?",
-      a: "LegalSuite is built on AWS infrastructure with a signed Business Associate Agreement (BAA). We use AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls, two-factor authentication, and full audit trails with 6-year retention — meeting all HIPAA technical safeguard requirements. All new law firms are required to sign a Business Associate Agreement (BAA) with LegalSuite before accessing the platform, ensuring full HIPAA compliance chain from our infrastructure to your practice.",
+      a: "LegalSuite is built on AWS infrastructure with a signed Business Associate Agreement (BAA). We use AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls, two-factor authentication, and full audit trails with 6-year retention \u2014 meeting all HIPAA technical safeguard requirements. All new law firms are required to sign a Business Associate Agreement (BAA) with LegalSuite before accessing the platform, ensuring full HIPAA compliance chain from our infrastructure to your practice.",
     },
     {
       q: "How does the AI medical chronology work?",
-      a: "Upload your medical records as PDFs (up to 10,000+ pages). Our AI — powered by Claude Opus 4.6 by Anthropic, the most accurate model available for this work — performs three passes: extraction (identifies dates, providers, diagnoses, treatments), verification (cross-references for accuracy), and annotation (adds clinical context). You get a complete, organized chronology in minutes. Important: While our AI is highly accurate, it can make mistakes. All chronology output must be reviewed and verified by qualified personnel before inclusion in any court filings or legal documentation.",
+      a: "Upload your medical records as PDFs (up to 10,000+ pages). Our AI \u2014 powered by Claude Opus 4.6 by Anthropic, the most accurate model available for this work \u2014 performs three passes: extraction (identifies dates, providers, diagnoses, treatments), verification (cross-references for accuracy), and annotation (adds clinical context). You get a complete, organized chronology in minutes. Important: While our AI is highly accurate, it can make mistakes. All chronology output must be reviewed and verified by qualified personnel before inclusion in any court filings or legal documentation.",
     },
     {
       q: "How much does the AI chronology cost per page?",
@@ -1171,7 +901,7 @@ function FAQ() {
     },
     {
       q: "Is there a free trial?",
-      a: "Absolutely. Every plan starts with a free trial — no credit card required. You get full access to all features so you can see exactly how LegalSuite will transform your firm before committing.",
+      a: "Absolutely. Every plan starts with a free trial \u2014 no credit card required. You get full access to all features so you can see exactly how LegalSuite will transform your firm before committing.",
     },
     {
       q: "How many team members can I have?",
@@ -1183,7 +913,7 @@ function FAQ() {
     },
     {
       q: "Do you offer onboarding support?",
-      a: "Yes. Every new firm gets a personalized onboarding session with our team. We'll walk you through the platform, help you set up your cases and workflows, and make sure your team is comfortable before you go live.",
+      a: "Yes. Every new firm gets a personalized onboarding session with our team. We\u2019ll walk you through the platform, help you set up your cases and workflows, and make sure your team is comfortable before you go live.",
     },
   ];
 
@@ -1325,7 +1055,6 @@ export default function Home() {
       <PlatformFeatures />
       <BuiltForPI />
       <Pricing />
-
       <FAQ />
       <FinalCTA />
       <Footer />
