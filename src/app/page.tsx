@@ -32,6 +32,8 @@ import {
 
 const SIGNUP_URL =
   "http://legalsuite-prod2.eba-imjvmfeg.us-east-1.elasticbeanstalk.com/signup";
+const DEMO_URL =
+  "https://link.aipeakbiz.com/widget/bookings/legalsuiteapp-demo";
 
 function LSLogo({ className = "h-8 w-8" }: { className?: string }) {
   return (
@@ -81,6 +83,14 @@ function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
+              href={DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 text-teal font-semibold rounded-lg border border-teal/30 hover:bg-teal/5 transition-colors text-sm"
+            >
+              Schedule a Demo
+            </a>
+            <a
               href={SIGNUP_URL}
               className="px-5 py-2.5 bg-teal text-white font-semibold rounded-lg hover:bg-teal-dark transition-colors cta-glow text-sm"
             >
@@ -110,6 +120,14 @@ function Navigation() {
                 {l.label}
               </a>
             ))}
+            <a
+              href={DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block mx-3 text-center px-5 py-2.5 text-teal font-semibold rounded-lg border border-teal/30 text-sm"
+            >
+              Schedule a Demo
+            </a>
             <a
               href={SIGNUP_URL}
               className="block mx-3 text-center px-5 py-2.5 bg-teal text-white font-semibold rounded-lg text-sm"
@@ -183,10 +201,12 @@ function Hero() {
             <ArrowRight className="h-5 w-5" />
           </a>
           <a
-            href="#features"
+            href={DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl text-lg border border-white/20 hover:bg-white/20 transition-all"
           >
-            See All Features
+            Schedule a Demo
           </a>
         </motion.div>
 
@@ -300,8 +320,8 @@ function ProblemStatement() {
               transition={{ delay: i * 0.1 }}
               className="p-6 rounded-2xl border border-red-100 bg-red-50/50"
             >
-              <div className="h-12 w-12 rounded-xl bg-red-100 flex items-center justify-center mb-4">
-                <p.icon className="h-6 w-6 text-red-500" />
+              <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center mb-4 shadow-md shadow-red-200">
+                <p.icon className="h-6 w-6 text-white" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-bold text-navy-dark mb-2">{p.title}</h3>
               <p className="text-navy-dark/60 text-sm leading-relaxed">{p.desc}</p>
@@ -546,8 +566,8 @@ function PlatformFeatures() {
               transition={{ delay: (i % 4) * 0.05 }}
               className="bg-white p-6 rounded-2xl border border-gray-border hover:border-teal/30 hover:shadow-lg hover:shadow-teal/5 transition-all group"
             >
-              <div className="h-11 w-11 rounded-xl bg-teal/10 flex items-center justify-center mb-4 group-hover:bg-teal/20 transition-colors">
-                <f.icon className="h-5 w-5 text-teal" />
+              <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-teal to-emerald flex items-center justify-center mb-4 shadow-md shadow-teal/20 group-hover:shadow-lg group-hover:shadow-teal/30 group-hover:scale-105 transition-all">
+                <f.icon className="h-6 w-6 text-white" strokeWidth={1.5} />
               </div>
               <h3 className="text-base font-bold text-navy-dark mb-1.5">{f.title}</h3>
               <p className="text-sm text-navy-dark/60 leading-relaxed">{f.desc}</p>
@@ -575,7 +595,7 @@ function BuiltForPI() {
     {
       icon: Award,
       title: "Competitive Edge",
-      desc: "While competitors charge $100+/user for basic case management, LegalSuite gives you AI chronology for a fraction of the cost.",
+      desc: "Competitors charge $150 to $300+ per hour for medical chronology services. LegalSuite gives you AI-powered chronologies for pennies per page — saving your firm thousands on every case.",
     },
   ];
   return (
@@ -607,10 +627,10 @@ function BuiltForPI() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center p-8 rounded-2xl bg-gradient-to-b from-teal/5 to-transparent border border-teal/10"
+              className="text-center p-8 rounded-2xl bg-gradient-to-b from-teal/5 to-transparent border border-teal/10 group"
             >
-              <div className="h-14 w-14 rounded-2xl bg-teal/10 flex items-center justify-center mx-auto mb-5">
-                <b.icon className="h-7 w-7 text-teal" />
+              <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-teal to-emerald flex items-center justify-center mx-auto mb-5 shadow-lg shadow-teal/25 group-hover:scale-105 transition-transform">
+                <b.icon className="h-7 w-7 text-white" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-bold text-navy-dark mb-3">{b.title}</h3>
               <p className="text-navy-dark/60 text-sm leading-relaxed">{b.desc}</p>
@@ -902,13 +922,23 @@ function FinalCTA() {
             Join forward-thinking firms that are replacing 5+ tools with one powerful
             platform. Start your free trial today — no credit card required.
           </p>
-          <a
-            href={SIGNUP_URL}
-            className="inline-flex items-center gap-2 px-10 py-4 bg-teal text-white font-bold rounded-xl text-lg hover:bg-teal-dark transition-all cta-glow shadow-lg shadow-teal/25"
-          >
-            Start Your Free Trial
-            <ArrowRight className="h-5 w-5" />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={SIGNUP_URL}
+              className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-teal text-white font-bold rounded-xl text-lg hover:bg-teal-dark transition-all cta-glow shadow-lg shadow-teal/25"
+            >
+              Start Your Free Trial
+              <ArrowRight className="h-5 w-5" />
+            </a>
+            <a
+              href={DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl text-lg border border-white/20 hover:bg-white/20 transition-all"
+            >
+              Schedule a Demo
+            </a>
+          </div>
           <p className="mt-4 text-sm text-white/50">
             Free trial &middot; No credit card &middot; Setup in 5 minutes
           </p>
@@ -945,8 +975,7 @@ function Footer() {
             </a>
           </div>
           <div className="text-sm">
-            &copy; {new Date().getFullYear()} Frontline Legal Nurse Consulting. All
-            rights reserved.
+            &copy; {new Date().getFullYear()} LegalSuiteApp. All rights reserved.
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/40">
