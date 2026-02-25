@@ -93,7 +93,7 @@ function Navigation() {
               href={SIGNUP_URL}
               className="px-5 py-2.5 bg-teal text-white font-semibold rounded-lg hover:bg-teal-dark transition-colors cta-glow text-sm"
             >
-              Start Free Trial
+              Start 14-Day Free Trial
             </a>
           </div>
 
@@ -131,7 +131,7 @@ function Navigation() {
               href={SIGNUP_URL}
               className="block mx-3 text-center px-5 py-2.5 bg-teal text-white font-semibold rounded-lg text-sm"
             >
-              Start Free Trial
+              Start 14-Day Free Trial
             </a>
           </div>
         )}
@@ -196,7 +196,7 @@ function Hero() {
             href={SIGNUP_URL}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-bold rounded-xl text-lg hover:bg-teal-dark transition-all cta-glow shadow-lg shadow-teal/25"
           >
-            Start Your Free Trial
+            Start Your 14-Day Free Trial
             <ArrowRight className="h-5 w-5" />
           </a>
           <a
@@ -226,7 +226,7 @@ function Hero() {
           </div>
           <div className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            <span>Setup in 5 Minutes</span>
+            <span>14-Day Free Trial</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="h-4 w-4" />
@@ -451,21 +451,39 @@ function ChronologyShowcase() {
           </div>
         </motion.div>
 
+        {/* Free Trial Chronology */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 max-w-3xl mx-auto p-5 rounded-xl bg-teal/10 border border-teal/20 text-center"
+        >
+          <p className="text-sm text-white/80 leading-relaxed">
+            <span className="font-bold text-teal">Try It Free:</span>{" "}
+            Every 14-day free trial includes one complimentary AI medical chronology
+            for a case up to 300 pages — so you can experience the power of AI-assisted
+            chronology firsthand. Need more? Simply choose a plan to continue.
+          </p>
+        </motion.div>
+
         {/* AI Disclaimer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 max-w-3xl mx-auto p-5 rounded-xl bg-white/5 border border-white/10 text-center"
+          className="mt-4 max-w-3xl mx-auto p-5 rounded-xl bg-white/5 border border-white/10 text-center"
         >
           <p className="text-xs text-white/50 leading-relaxed">
-            <span className="font-semibold text-white/70">Important Disclaimer:</span>{" "}
-            LegalSuite&apos;s AI medical chronology is powered by Claude Opus 4.6 by Anthropic —
-            the most capable and accurate AI model available for medical record analysis.
-            However, AI can make mistakes. All chronology output must be reviewed and
-            verified by qualified personnel before inclusion in any documentation submitted
-            to courts or used in legal proceedings. LegalSuite is a tool to assist legal
-            professionals, not a substitute for professional medical or legal judgment.
+            <span className="font-semibold text-white/70">Important AI Disclaimer:</span>{" "}
+            LegalSuite&apos;s AI medical chronology is powered by advanced AI technology.
+            While highly capable, AI can produce inaccurate, incomplete, or incorrect
+            information. All AI-generated chronology output, summaries, and analysis must
+            be thoroughly reviewed and independently verified by qualified legal and medical
+            professionals before being relied upon, included in any documentation submitted
+            to courts, or used in legal proceedings. LegalSuite is a productivity tool
+            designed to assist legal professionals — it is not a substitute for professional
+            medical judgment, legal advice, or human review. Users are solely responsible
+            for verifying the accuracy of all AI-generated content.
           </p>
         </motion.div>
       </div>
@@ -750,7 +768,7 @@ function Pricing() {
             </span>
           </h2>
           <p className="mt-4 text-lg text-navy-dark/60 max-w-xl mx-auto">
-            No hidden fees. No long-term contracts. Start free and upgrade when you&apos;re ready.
+            No hidden fees. No long-term contracts. 14-day free trial — no credit card required.
           </p>
 
           {/* Toggle */}
@@ -810,7 +828,7 @@ function Pricing() {
                     : "bg-navy-dark/5 text-navy-dark hover:bg-navy-dark/10"
                 }`}
               >
-                Start Free Trial
+                Start 14-Day Free Trial
               </a>
               <ul className="mt-6 space-y-3">
                 {plan.features.map((f) => (
@@ -881,7 +899,7 @@ function FAQ() {
     },
     {
       q: "Is there a free trial?",
-      a: "Absolutely. Every plan starts with a free trial \u2014 no credit card required. You get full access to all features so you can see exactly how LegalSuite will transform your firm before committing.",
+      a: "Absolutely. Every plan starts with a 14-day free trial \u2014 no credit card required. You get full access to all features, plus one complimentary AI medical chronology for a case up to 300 pages. To continue using the chronology feature beyond the trial or for cases over 300 pages, simply choose a plan. It\u2019s a risk-free way to see exactly how LegalSuite will transform your firm.",
     },
     {
       q: "How many team members can I have?",
@@ -949,14 +967,14 @@ function FinalCTA() {
           </h2>
           <p className="text-lg text-white/70 mb-8 max-w-xl mx-auto">
             Join forward-thinking firms that are replacing 5+ tools with one powerful
-            platform. Start your free trial today — no credit card required.
+            platform. Start your 14-day free trial today — no credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={SIGNUP_URL}
               className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-teal text-white font-bold rounded-xl text-lg hover:bg-teal-dark transition-all cta-glow shadow-lg shadow-teal/25"
             >
-              Start Your Free Trial
+              Start Your 14-Day Free Trial
               <ArrowRight className="h-5 w-5" />
             </a>
             <a
@@ -969,7 +987,7 @@ function FinalCTA() {
             </a>
           </div>
           <p className="mt-4 text-sm text-white/50">
-            Free trial &middot; No credit card &middot; Setup in 5 minutes
+            14-day free trial &middot; No credit card &middot; Includes 1 free chronology (up to 300 pages)
           </p>
         </motion.div>
       </div>
@@ -1007,7 +1025,28 @@ function Footer() {
             &copy; {new Date().getFullYear()} LegalSuiteApp. All rights reserved.
           </div>
         </div>
-        <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/40">
+
+        {/* Legal links */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm">
+          <a
+            href="https://app.legalsuiteapp.com/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            Terms of Service
+          </a>
+          <a
+            href="https://app.legalsuiteapp.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            Privacy Policy
+          </a>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/40">
           <span className="flex items-center gap-1.5">
             <Shield className="h-3.5 w-3.5" /> HIPAA-Ready Infrastructure
           </span>
@@ -1017,6 +1056,20 @@ function Footer() {
           <span className="flex items-center gap-1.5">
             <Award className="h-3.5 w-3.5" /> Built on AWS
           </span>
+        </div>
+
+        {/* AI Disclaimer in footer */}
+        <div className="mt-6 pt-4 border-t border-white/10 max-w-3xl mx-auto text-center">
+          <p className="text-[11px] text-white/30 leading-relaxed">
+            <span className="font-semibold text-white/40">AI Disclaimer:</span>{" "}
+            LegalSuite uses artificial intelligence to assist with medical chronology
+            generation and other features. AI-generated content may contain errors,
+            inaccuracies, or omissions. All AI output must be independently reviewed
+            and verified by qualified professionals before use in any legal proceedings,
+            court filings, or client communications. LegalSuite does not provide legal
+            or medical advice. Users are solely responsible for verifying the accuracy
+            of all content produced by the platform.
+          </p>
         </div>
       </div>
     </footer>
