@@ -219,7 +219,7 @@ function Hero() {
         >
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4" />
-            <span>HIPAA-Ready</span>
+            <span>HIPAA Compliant</span>
           </div>
           <div className="flex items-center gap-2">
             <Lock className="h-4 w-4" />
@@ -243,9 +243,9 @@ function Hero() {
 function TrustBar() {
   const stats = [
     { value: "10x", label: "Faster Chronologies", icon: Zap },
-    { value: "100%", label: "HIPAA-Ready", icon: Shield },
+    { value: "100%", label: "HIPAA Compliant", icon: Shield },
     { value: "68%", label: "Less Admin Time", icon: Clock },
-    { value: "99.9%", label: "Uptime SLA", icon: TrendingUp },
+    { value: "$49", label: "Starting Price", icon: DollarSign },
   ];
   return (
     <section className="py-12 bg-gray-light border-b border-gray-border">
@@ -702,13 +702,14 @@ function Pricing() {
       annual: 44,
       desc: "For solo practitioners getting started",
       features: [
-        "Full case management",
+        "Up to 5 team members",
+        "25 active cases",
+        "20 GB storage",
         "Client portal",
         "Billing & invoicing",
         "Document management",
         "Calendar & scheduling",
         "Real-time messaging",
-        "Up to 5 team members",
       ],
       chronology: false,
       popular: false,
@@ -720,12 +721,12 @@ function Pricing() {
       desc: "For growing firms that need AI power",
       features: [
         "Everything in Starter",
-        "AI Medical Chronology",
-        "500 pages/month included",
-        "Advanced analytics",
-        "Priority support",
         "Unlimited team members",
-        "Custom workflows",
+        "75 active cases",
+        "50 GB storage",
+        "AI Medical Chronology",
+        "500 pages/month per firm",
+        "Priority support",
       ],
       chronology: true,
       chronologyPages: 500,
@@ -739,12 +740,12 @@ function Pricing() {
       desc: "For large firms with high-volume needs",
       features: [
         "Everything in Professional",
+        "Unlimited cases",
+        "Unlimited storage",
         "AI Medical Chronology",
-        "2,000 pages/month included",
-        "White-label options",
+        "2,000 pages/month per firm",
         "Dedicated account manager",
-        "SLA guarantee",
-        "API access",
+        "Phone support",
       ],
       chronology: true,
       chronologyPages: 2000,
@@ -1089,7 +1090,7 @@ function Footer() {
 
         <div className="mt-6 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/40">
           <span className="flex items-center gap-1.5">
-            <Shield className="h-3.5 w-3.5" /> HIPAA-Ready Infrastructure
+            <Shield className="h-3.5 w-3.5" /> HIPAA Compliant Infrastructure
           </span>
           <span className="flex items-center gap-1.5">
             <Lock className="h-3.5 w-3.5" /> AES-256 Encryption
