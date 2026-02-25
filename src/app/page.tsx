@@ -273,19 +273,19 @@ function TrustBar() {
 function ProblemStatement() {
   const problems = [
     {
-      icon: Briefcase,
       title: "Scattered Tools",
       desc: "Case management in one app, billing in another, documents in a third. Your team wastes hours switching between systems.",
+      bg: "https://images.unsplash.com/photo-1703854599747-4355f123dd3f?auto=format&fit=crop&w=800&q=80",
     },
     {
-      icon: FileText,
       title: "Manual Chronologies",
       desc: "Paralegals spend 20-40 hours per medical chronology. At $50/hr, that\u2019s $1,000-$2,000 per case \u2014 before the attorney even looks at it.",
+      bg: "https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=800&q=80",
     },
     {
-      icon: DollarSign,
       title: "Expensive Software",
       desc: "Legacy legal software charges $100+ per user per month and still doesn\u2019t include chronology tools. You\u2019re paying more for less.",
+      bg: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
     },
   ];
   return (
@@ -317,13 +317,17 @@ function ProblemStatement() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-2xl border border-red-100 bg-red-50/50"
+              className="relative rounded-2xl overflow-hidden min-h-[240px] flex flex-col justify-end"
             >
-              <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 border border-red-200 flex items-center justify-center mb-4">
-                <p.icon className="h-6 w-6 text-red-500" strokeWidth={1.5} />
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${p.bg})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
+              <div className="relative z-10 p-6">
+                <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{p.desc}</p>
               </div>
-              <h3 className="text-lg font-bold text-navy-dark mb-2">{p.title}</h3>
-              <p className="text-navy-dark/60 text-sm leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -476,85 +480,73 @@ function PlatformFeatures() {
       icon: Briefcase,
       title: "Case Management",
       desc: "Track every case from intake to settlement. Milestones, status updates, and automatic workflows keep your team aligned.",
-      from: "#0D9488",
-      to: "#059669",
+      bg: "https://images.unsplash.com/photo-1767972463877-b64ba4283cd0?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Users,
       title: "Client & Contact CRM",
       desc: "Complete client profiles with case history, documents, and communication log. Client portal gives clients 24/7 visibility.",
-      from: "#1E3A5F",
-      to: "#3B82F6",
+      bg: "https://images.unsplash.com/photo-1758518730384-be3d205838e8?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Receipt,
       title: "Billing & Invoicing",
       desc: "Time tracking, invoice generation, PDF exports, and payment processing. Three-tier pricing with Stripe integration.",
-      from: "#059669",
-      to: "#10B981",
+      bg: "https://images.unsplash.com/photo-1611125832047-1d7ad1e8e48f?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: FileText,
       title: "Document Management",
       desc: "Upload, organize, and share documents securely. Support for PDF, DOC, images, and more \u2014 all encrypted at rest.",
-      from: "#6366F1",
-      to: "#8B5CF6",
+      bg: "https://images.unsplash.com/photo-1768158989131-64cbff67f292?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Calendar,
       title: "Calendar & Scheduling",
       desc: "Firm-wide calendar with case-linked events. Create, edit, and coordinate deadlines across your entire team.",
-      from: "#0891B2",
-      to: "#0D9488",
+      bg: "https://images.unsplash.com/photo-1770299373695-dc86ce6966f0?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: MessageSquare,
       title: "Real-Time Messaging",
       desc: "Built-in WebSocket messaging between team members. No more switching to Slack or email for internal communication.",
-      from: "#334155",
-      to: "#64748B",
+      bg: "https://images.unsplash.com/photo-1725798451557-fc60db3eb6a2?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Clock,
       title: "Time Tracking",
       desc: "Track billable hours by case and activity. One-click timers and manual entry with automatic invoice linking.",
-      from: "#7C3AED",
-      to: "#A855F7",
+      bg: "https://images.unsplash.com/photo-1711399339353-f79e536828f6?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: BarChart3,
       title: "Analytics Dashboard",
       desc: "Real-time metrics on cases, revenue, billing, and team productivity. Know exactly how your firm is performing.",
-      from: "#0D9488",
-      to: "#059669",
+      bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Search,
       title: "Global Search",
       desc: "Find any case, client, document, or invoice instantly with full-text search across your entire firm\u2019s data.",
-      from: "#0284C7",
-      to: "#0D9488",
+      bg: "https://images.unsplash.com/photo-1632096936824-565d39f8e5eb?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Users,
       title: "Team Management",
       desc: "Invite team members, assign roles, manage permissions. Attorneys, paralegals, and staff \u2014 everyone in one place.",
-      from: "#0F172A",
-      to: "#1E3A5F",
+      bg: "https://images.unsplash.com/photo-1739298061740-5ed03045b280?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Bell,
       title: "Notifications",
       desc: "Email and in-app notifications for case updates, deadlines, messages, and billing events. Never miss a beat.",
-      from: "#D97706",
-      to: "#F59E0B",
+      bg: "https://images.unsplash.com/photo-1609162554108-6490759499ef?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Shield,
       title: "Security & HIPAA",
       desc: "AES-256 encryption, TLS 1.3, role-based access control, 2FA, audit trails, and AWS infrastructure with BAA.",
-      from: "#10B981",
-      to: "#0D9488",
+      bg: "https://images.unsplash.com/photo-1767972464040-8bfee42d7bed?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -589,35 +581,20 @@ function PlatformFeatures() {
               transition={{ delay: (i % 4) * 0.05 }}
               className="bg-white rounded-2xl border border-gray-border hover:border-teal/30 hover:shadow-lg hover:shadow-teal/5 transition-all group overflow-hidden"
             >
-              {/* Gradient header with semi-transparent icon */}
-              <div
-                className="relative h-36 overflow-hidden"
-                style={{ background: `linear-gradient(135deg, ${f.from}, ${f.to})` }}
-              >
-                {/* Decorative circles */}
+              {/* Photo header */}
+              <div className="relative h-36 overflow-hidden">
                 <div
-                  className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-20"
-                  style={{ background: `radial-gradient(circle, white 0%, transparent 70%)` }}
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${f.bg})` }}
                 />
-                <div
-                  className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full opacity-10"
-                  style={{ background: `radial-gradient(circle, white 0%, transparent 70%)` }}
-                />
-                {/* Large semi-transparent background icon */}
-                <f.icon
-                  className="absolute right-3 top-1/2 -translate-y-1/2 h-28 w-28 text-white/[0.15]"
-                  strokeWidth={0.75}
-                />
-                {/* Small solid icon badge */}
-                <div className="absolute left-4 bottom-4">
-                  <div className="h-11 w-11 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center">
-                    <f.icon className="h-5 w-5" style={{ color: f.from }} />
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
+                {/* Title overlay on photo */}
+                <div className="absolute bottom-3 left-4 right-4">
+                  <h3 className="text-base font-bold text-white drop-shadow-lg">{f.title}</h3>
                 </div>
               </div>
               {/* Text content */}
-              <div className="p-5 pt-4">
-                <h3 className="text-base font-bold text-navy-dark mb-1.5">{f.title}</h3>
+              <div className="p-5 pt-3">
                 <p className="text-sm text-navy-dark/60 leading-relaxed">{f.desc}</p>
               </div>
             </motion.div>
@@ -632,19 +609,19 @@ function PlatformFeatures() {
 function BuiltForPI() {
   const benefits = [
     {
-      icon: Stethoscope,
       title: "Medical Chronology Integration",
       desc: "The only platform where your AI chronologies live right next to case files, client records, and billing \u2014 no exports needed.",
+      bg: "https://images.unsplash.com/photo-1758691462814-485c3672e447?auto=format&fit=crop&w=800&q=80",
     },
     {
-      icon: Heart,
       title: "Built by Legal Nurse Consultants",
       desc: "Designed by professionals who understand personal injury workflows, medical terminology, and what matters at trial.",
+      bg: "https://images.unsplash.com/photo-1562673462-877b3612cbea?auto=format&fit=crop&w=800&q=80",
     },
     {
-      icon: Award,
       title: "Competitive Edge",
       desc: "Competitors charge $150 to $300+ per hour for medical chronology services. LegalSuite gives you AI-powered chronologies for pennies per page \u2014 saving your firm thousands on every case.",
+      bg: "https://images.unsplash.com/photo-1759701546980-1211be084c70?auto=format&fit=crop&w=800&q=80",
     },
   ];
   return (
@@ -676,14 +653,17 @@ function BuiltForPI() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center p-8 rounded-2xl bg-gradient-to-b from-teal/5 to-transparent border border-teal/10 group"
+              className="relative rounded-2xl overflow-hidden min-h-[280px] flex flex-col justify-end group"
             >
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-navy-dark to-navy flex items-center justify-center mx-auto mb-5 shadow-lg shadow-navy-dark/25 group-hover:scale-105 transition-transform relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-teal/20 to-transparent" />
-                <b.icon className="h-8 w-8 text-teal relative z-10" strokeWidth={1.5} />
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: `url(${b.bg})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/50 to-navy-dark/10" />
+              <div className="relative z-10 p-6 text-center">
+                <h3 className="text-lg font-bold text-white mb-3">{b.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{b.desc}</p>
               </div>
-              <h3 className="text-lg font-bold text-navy-dark mb-3">{b.title}</h3>
-              <p className="text-navy-dark/60 text-sm leading-relaxed">{b.desc}</p>
             </motion.div>
           ))}
         </div>
