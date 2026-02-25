@@ -28,6 +28,7 @@ import {
   DollarSign,
   Award,
   Stethoscope,
+  Mail,
 } from "lucide-react";
 
 const SIGNUP_URL = "https://app.legalsuiteapp.com/signup";
@@ -951,6 +952,46 @@ function FAQ() {
   );
 }
 
+// ─── CONTACT US ──────────────────────────────────
+function ContactUs() {
+  return (
+    <section id="contact" className="py-20 bg-slate-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            Still Have Questions?
+          </h2>
+          <p className="text-lg text-slate-600 mb-8">
+            We&apos;d love to hear from you. Reach out directly or schedule a meeting at a time that works for you.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="mailto:admin@legalsuiteapp.com"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-300 rounded-lg text-slate-700 font-medium hover:border-teal-500 hover:text-teal-700 transition-colors"
+            >
+              <Mail className="h-5 w-5" />
+              Contact Us
+            </a>
+            <a
+              href={DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 rounded-lg text-white font-medium hover:bg-teal-700 transition-colors"
+            >
+              <Calendar className="h-5 w-5" />
+              Schedule a Meeting
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // ─── FINAL CTA ───────────────────────────────────
 function FinalCTA() {
   return (
@@ -1089,6 +1130,7 @@ export default function Home() {
       <BuiltForPI />
       <Pricing />
       <FAQ />
+      <ContactUs />
       <FinalCTA />
       <Footer />
     </>
