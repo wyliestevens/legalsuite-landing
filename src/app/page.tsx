@@ -83,6 +83,12 @@ function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
+              href="https://app.legalsuiteapp.com/login"
+              className="px-5 py-2.5 text-navy-dark/70 font-semibold hover:text-teal transition-colors text-sm"
+            >
+              Log In
+            </a>
+            <a
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -120,6 +126,13 @@ function Navigation() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="https://app.legalsuiteapp.com/login"
+              className="block mx-3 text-center px-5 py-2.5 text-navy-dark/70 font-semibold text-sm"
+              onClick={() => setMobileOpen(false)}
+            >
+              Log In
+            </a>
             <a
               href={DEMO_URL}
               target="_blank"
@@ -1030,6 +1043,12 @@ function FinalCTA() {
           </div>
           <p className="mt-4 text-sm text-white/50">
             14-day free trial &middot; No credit card &middot; Includes 1 free chronology (up to 300 pages)
+          </p>
+          <p className="mt-3 text-sm text-white/40">
+            Already have an account?{" "}
+            <a href="https://app.legalsuiteapp.com/login" className="text-white/70 hover:text-white underline transition-colors">
+              Log In
+            </a>
           </p>
         </motion.div>
       </div>
