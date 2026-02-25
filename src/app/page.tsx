@@ -183,7 +183,7 @@ function Hero() {
         >
           Cases. Clients. Billing. Documents. Calendar. Messaging. Team management.
           Plus AI-powered medical chronology built right in — all in a single,
-          HIPAA-ready platform built for personal injury firms.
+          HIPAA-compliant platform built for personal injury firms.
         </motion.p>
 
         {/* CTA buttons */}
