@@ -196,7 +196,7 @@ function Hero() {
         >
           Cases. Clients. Billing. Documents. Calendar. Messaging. Team management.
           Plus AI-powered medical chronology built right in — all in a single,
-          HIPAA-compliant platform built for personal injury firms.
+          HIPAA-compliant platform built for modern law firms.
         </motion.p>
 
         {/* CTA buttons */}
@@ -706,63 +706,95 @@ function BuiltForPI() {
 
 // ─── PRICING ─────────────────────────────────────
 function Pricing() {
-  const [annual, setAnnual] = useState(false);
-
-  const plans = [
+  const platformPlans = [
     {
-      name: "Starter",
-      monthly: 49,
-      annual: 44,
-      desc: "For solo practitioners getting started",
+      name: "Foundation",
+      price: 49,
+      unit: "per user/month",
+      desc: "Everything a small firm needs to get organized.",
       features: [
-        "Up to 5 team members",
-        "25 active cases",
-        "20 GB storage",
+        "Up to 5 users",
+        "Case & client management",
+        "Document storage (20 GB)",
+        "Time tracking & billing",
         "Client portal",
-        "Billing & invoicing",
-        "Document management",
-        "Calendar & scheduling",
-        "Real-time messaging",
+        "Calendar & messaging",
       ],
-      chronology: false,
       popular: false,
     },
     {
-      name: "Professional",
-      monthly: 99,
-      annual: 89,
-      desc: "For growing firms that need AI power",
+      name: "Advantage",
+      price: 99,
+      unit: "per user/month",
+      desc: "For growing firms that need more power and storage.",
       features: [
-        "Everything in Starter",
-        "Unlimited team members",
-        "75 active cases",
-        "50 GB storage",
-        "AI Medical Chronology",
-        "500 pages/month per firm",
-        "Priority support",
+        "Unlimited users",
+        "Up to 75 active cases",
+        "Document storage (50 GB)",
+        "E-signature & PDF forms",
+        "Advanced reporting",
+        "Priority email support",
       ],
-      chronology: true,
-      chronologyPages: 500,
-      overage: 0.18,
       popular: true,
     },
     {
-      name: "Enterprise",
-      monthly: 199,
-      annual: 179,
-      desc: "For large firms with high-volume needs",
+      name: "Command",
+      price: 199,
+      unit: "per user/month",
+      desc: "Full platform for firms that want it all.",
       features: [
-        "Everything in Professional",
-        "Unlimited cases",
+        "Unlimited users & cases",
         "Unlimited storage",
-        "AI Medical Chronology",
-        "2,000 pages/month per firm",
+        "AI Medical Chronology included",
+        "Custom workflows & playbooks",
+        "API access & integrations",
         "Dedicated account manager",
-        "Phone support",
       ],
-      chronology: true,
-      chronologyPages: 2000,
-      overage: 0.15,
+      popular: false,
+    },
+  ];
+
+  const aiPlans = [
+    {
+      tier: "Starter",
+      monthly: 297,
+      setup: 597,
+      desc: "One core AI tool configured for your firm.",
+      features: [
+        "Pick one: Chatbot, Voice, or Reviews",
+        "Configured for your practice area",
+        "Connected to calendar and CRM",
+        "Monthly performance check-in",
+      ],
+      popular: false,
+    },
+    {
+      tier: "Growth",
+      monthly: 497,
+      setup: 797,
+      desc: "Three AI tools working together as one system.",
+      features: [
+        "AI Chatbot on your website",
+        "AI Voice Assistant for every call",
+        "Automated Reputation Management",
+        "All tools connected to one CRM",
+        "Booking and follow-up automation",
+      ],
+      popular: true,
+    },
+    {
+      tier: "Peak Performance",
+      monthly: 797,
+      setup: 997,
+      desc: "Full AI infrastructure. Website, tools, and automation.",
+      features: [
+        "Professional website built and hosted",
+        "AI Chatbot + Voice + Reviews",
+        "Full CRM with pipeline management",
+        "No-show prevention",
+        "Reactivation campaigns",
+        "Missed call text-back",
+      ],
       popular: false,
     },
   ];
@@ -774,7 +806,7 @@ function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-navy-dark">
             Simple, Transparent{" "}
@@ -783,111 +815,177 @@ function Pricing() {
             </span>
           </h2>
           <p className="mt-4 text-lg text-navy-dark/60 max-w-xl mx-auto">
-            No hidden fees. No long-term contracts. 14-day free trial — no credit card required.
+            No hidden fees. No long-term contracts. Start with the platform, add AI when you are ready.
           </p>
+        </motion.div>
 
-          {/* Toggle */}
-          <div className="mt-8 inline-flex items-center gap-3 bg-white rounded-full p-1 border border-gray-border shadow-sm">
-            <button
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                !annual ? "bg-teal text-white shadow" : "text-navy-dark/60 hover:text-navy-dark"
-              }`}
-              onClick={() => setAnnual(false)}
-            >
-              Monthly
-            </button>
-            <button
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                annual ? "bg-teal text-white shadow" : "text-navy-dark/60 hover:text-navy-dark"
-              }`}
-              onClick={() => setAnnual(true)}
-            >
-              Annual
-              <span className="ml-1.5 text-xs font-bold text-amber">Save 10%</span>
-            </button>
+        {/* ── Platform Plans ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-6"
+        >
+          <div className="flex items-center gap-3 mb-8">
+            <div className="h-10 w-10 rounded-xl bg-navy-dark flex items-center justify-center">
+              <Briefcase className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-navy-dark">LegalSuite Platform</h3>
+              <p className="text-sm text-navy-dark/50">Per-user pricing for your entire firm</p>
+            </div>
           </div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 items-start">
-          {plans.map((plan, i) => (
+          {platformPlans.map((plan, i) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative bg-white rounded-2xl border p-8 ${
+              className={`relative bg-white rounded-2xl border p-8 flex flex-col ${
                 plan.popular
                   ? "border-teal shadow-xl shadow-teal/10 ring-1 ring-teal/20"
                   : "border-gray-border"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-teal text-white text-xs font-bold px-4 py-1 rounded-full">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-teal text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">
                   Most Popular
                 </div>
               )}
-              <h3 className="text-lg font-bold text-navy-dark">{plan.name}</h3>
-              <p className="text-sm text-navy-dark/60 mt-1">{plan.desc}</p>
-              <div className="mt-5 mb-6">
-                <span className="text-4xl font-extrabold text-navy-dark">
-                  ${annual ? plan.annual : plan.monthly}
-                </span>
-                <span className="text-navy-dark/60 text-sm">/user/month</span>
+              <h3 className="text-xl font-bold text-navy-dark">{plan.name}</h3>
+              <div className="mt-4">
+                <span className="text-5xl font-extrabold text-navy-dark">${plan.price}</span>
+                <span className="text-navy-dark/60 text-sm ml-1">{plan.unit}</span>
               </div>
-              <a
-                href={SIGNUP_URL}
-                className={`block text-center w-full py-3 rounded-xl font-bold text-sm transition-all ${
-                  plan.popular
-                    ? "bg-teal text-white hover:bg-teal-dark cta-glow"
-                    : "bg-navy-dark/5 text-navy-dark hover:bg-navy-dark/10"
-                }`}
-              >
-                Start 14-Day Free Trial
-              </a>
-              <ul className="mt-6 space-y-3">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-navy-dark/70">
-                    <CheckCircle2 className="h-4 w-4 text-teal mt-0.5 shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              {plan.chronology && (
-                <div className="mt-5 pt-5 border-t border-gray-border">
-                  <p className="text-xs text-navy-dark/50">
-                    Includes {plan.chronologyPages?.toLocaleString()} AI chronology pages/month.
-                    Additional pages at ${plan.overage?.toFixed(2)}/page.
-                  </p>
-                </div>
-              )}
+              <p className="text-sm text-navy-dark/70 mt-4 mb-6">{plan.desc}</p>
+
+              <div className="border-t border-gray-border pt-5 mb-6">
+                <ul className="space-y-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-navy-dark/70">
+                      <CheckCircle2 className="h-4 w-4 text-teal mt-0.5 shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-auto">
+                <a
+                  href={SIGNUP_URL}
+                  className={`block text-center w-full py-3.5 rounded-xl font-bold text-sm transition-all ${
+                    plan.popular
+                      ? "bg-teal text-white hover:bg-teal-dark cta-glow"
+                      : "bg-white text-navy-dark border border-gray-border hover:bg-navy-dark/5"
+                  }`}
+                >
+                  Start Free Trial {plan.popular ? "\u2192" : ""}
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Chronology add-on callout */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 max-w-3xl mx-auto p-6 rounded-2xl bg-gradient-to-r from-navy-dark to-navy text-white text-center"
+          className="mt-8 text-center text-sm text-navy-dark/50 max-w-2xl mx-auto"
         >
-          <Brain className="h-8 w-8 text-teal mx-auto mb-3" />
-          <h3 className="text-lg font-bold mb-2">
-            Need Chronology on the Starter Plan?
-          </h3>
-          <p className="text-sm text-white/70 mb-4">
-            Add AI Medical Chronology to any plan for just $0.20/page with no monthly minimum.
-            A typical 300-page case costs about $60 — compared to $1,000+ the traditional way.
+          All platform plans include a 14-day free trial. No credit card required. HIPAA-compliant infrastructure included.
+        </motion.p>
+
+        {/* ── AI Solutions Add-Ons ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 mb-6"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-teal to-emerald flex items-center justify-center">
+              <Brain className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-navy-dark">AI Solutions Add-Ons</h3>
+              <p className="text-sm text-navy-dark/50">Supercharge your firm with AI-powered client tools</p>
+            </div>
+          </div>
+          <p className="text-sm text-navy-dark/60 max-w-2xl mt-3">
+            Add AI-powered client acquisition and communication tools to your LegalSuite platform.
+            These services work alongside your existing plan to bring in more clients and automate follow-ups.
           </p>
-          <a
-            href={SIGNUP_URL}
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-teal text-white font-semibold rounded-lg text-sm hover:bg-teal-dark transition-colors"
-          >
-            Get Started
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8 items-start mt-8">
+          {aiPlans.map((plan, i) => (
+            <motion.div
+              key={plan.tier}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`relative bg-white rounded-2xl border p-8 flex flex-col ${
+                plan.popular
+                  ? "border-teal shadow-xl shadow-teal/10 ring-1 ring-teal/20"
+                  : "border-gray-border"
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-teal to-emerald text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">
+                  Best Value
+                </div>
+              )}
+              <p className="text-xs font-bold uppercase tracking-widest text-teal">{plan.tier}</p>
+              <div className="mt-4">
+                <span className="text-5xl font-extrabold text-navy-dark">${plan.monthly}</span>
+                <span className="text-navy-dark/60 text-sm ml-1">/month</span>
+              </div>
+              <p className="text-sm text-navy-dark/50 mt-1">${plan.setup} one-time setup</p>
+              <p className="text-sm text-navy-dark/70 mt-4 mb-6">{plan.desc}</p>
+
+              <div className="border-t border-gray-border pt-5 mb-6">
+                <ul className="space-y-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-navy-dark/70">
+                      <CheckCircle2 className="h-4 w-4 text-teal mt-0.5 shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-auto">
+                <a
+                  href={DEMO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block text-center w-full py-3.5 rounded-xl font-bold text-sm transition-all ${
+                    plan.popular
+                      ? "bg-teal text-white hover:bg-teal-dark cta-glow"
+                      : "bg-white text-navy-dark border border-gray-border hover:bg-navy-dark/5"
+                  }`}
+                >
+                  Book a Demo {plan.popular ? "\u2192" : ""}
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-8 text-center text-sm text-navy-dark/50 max-w-3xl mx-auto leading-relaxed"
+        >
+          AI Solutions are add-ons to any LegalSuite plan. Voice calls billed at $0.12/min.
+          Chatbot messages billed at $0.01/msg. Month-to-month, cancel anytime.
+        </motion.p>
       </div>
     </section>
   );
@@ -906,7 +1004,7 @@ function FAQ() {
     },
     {
       q: "How much does the AI chronology cost per page?",
-      a: "Professional plan includes 500 pages/month with additional pages at just $0.18 each. Enterprise includes 2,000 pages/month at $0.15/page for overage. Starter plan users can add chronology at $0.20/page with no minimum. A typical 300-page case costs about $45-$60 with LegalSuite vs. $1,000-$2,000 for a paralegal to do it manually.",
+      a: "AI medical chronology is available as an add-on across all plans at $0.15\u2013$0.20 per page depending on your tier. A typical 300-page case costs about $45\u2013$60 with LegalSuite vs. $1,000\u2013$2,000 for a paralegal to do it manually.",
     },
     {
       q: "Can I migrate from Clio, MyCase, or PracticePanther?",
@@ -918,7 +1016,7 @@ function FAQ() {
     },
     {
       q: "How many team members can I have?",
-      a: "Starter plan supports up to 5 team members. Professional and Enterprise plans include unlimited team members. Each user gets their own login with role-based permissions (attorney, paralegal, admin, staff).",
+      a: "All plans include your full team. Each user gets their own login with role-based permissions (attorney, paralegal, admin, staff). No per-seat charges.",
     },
     {
       q: "What file types are supported for document uploads?",
