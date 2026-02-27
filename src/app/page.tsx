@@ -360,13 +360,18 @@ function ChronologyShowcase() {
     },
     {
       num: "02",
-      title: "AI Extracts & Organizes",
-      desc: "Our AI reads every page, identifies dates, providers, diagnoses, treatments, and medications. Three-pass verification ensures accuracy.",
+      title: "AI Extracts Every Event",
+      desc: "Pass 1: Our AI reads every page, identifies dates, providers, diagnoses, treatments, and medications \u2014 then generates a draft Word document.",
     },
     {
       num: "03",
-      title: "Review & Export",
-      desc: "Get a complete, timestamped medical chronology in minutes instead of weeks. Export to PDF or integrate directly into your case file.",
+      title: "You Review & Edit",
+      desc: "Open the Word doc, review the extracted events, correct anything the AI missed, and add your own notes. You stay in control of the final product.",
+    },
+    {
+      num: "04",
+      title: "AI Verifies & Adds Commentary",
+      desc: "Pass 2: The AI re-verifies your edits, cross-references the source records, and adds clinical commentary. Export the final chronology as Word and PDF.",
     },
   ];
 
@@ -392,12 +397,12 @@ function ChronologyShowcase() {
           </h2>
           <p className="mt-4 text-lg text-white/60 max-w-2xl mx-auto">
             Turn thousands of pages of medical records into an organized, verified
-            chronology in minutes — not weeks. No separate tool required.
+            chronology in minutes — not weeks. AI does the heavy lifting, you stay in control.
           </p>
         </motion.div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8 mb-14">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
           {steps.map((s, i) => (
             <motion.div
               key={s.num}
@@ -455,7 +460,7 @@ function ChronologyShowcase() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 text-teal mt-0.5 shrink-0" />
-                Three-pass AI verification
+                2-pass AI + human review
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="h-4 w-4 text-teal mt-0.5 shrink-0" />
@@ -1000,7 +1005,7 @@ function FAQ() {
     },
     {
       q: "How does the AI medical chronology work?",
-      a: "Upload your medical records as PDFs (up to 10,000+ pages). Our AI \u2014 powered by Claude Opus 4.6 by Anthropic, the most accurate model available for this work \u2014 performs three passes: extraction (identifies dates, providers, diagnoses, treatments), verification (cross-references for accuracy), and annotation (adds clinical context). You get a complete, organized chronology in minutes. Important: While our AI is highly accurate, it can make mistakes. All chronology output must be reviewed and verified by qualified personnel before inclusion in any court filings or legal documentation.",
+      a: "Upload your medical records as PDFs (up to 10,000+ pages). Our AI \u2014 powered by Claude Opus 4.6 by Anthropic, the most accurate model available for this work \u2014 uses an interactive 2-pass workflow: Pass 1 extracts all medical events (dates, providers, diagnoses, treatments) into a Word document. You then review and edit that document, correcting anything and adding your own notes. Pass 2 re-verifies your edits against the source records and adds clinical commentary. The final chronology is exported as both Word and PDF. This human-in-the-loop approach ensures accuracy while saving hours of manual work. Important: While our AI is highly capable, it can make mistakes. All chronology output must be reviewed and verified by qualified personnel before inclusion in any court filings or legal documentation.",
     },
     {
       q: "How much does the AI chronology cost per page?",
