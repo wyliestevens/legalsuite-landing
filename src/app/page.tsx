@@ -196,7 +196,7 @@ function Hero() {
         >
           Cases. Clients. Billing. Documents. Calendar. Messaging. Team management.
           Plus AI-powered medical chronology built right in — all in a single,
-          HIPAA-compliant platform built for modern law firms.
+          secure platform built for modern law firms.
         </motion.p>
 
         {/* CTA buttons */}
@@ -232,7 +232,7 @@ function Hero() {
         >
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4" />
-            <span>HIPAA Compliant</span>
+            <span>Enterprise-Grade Security</span>
           </div>
           <div className="flex items-center gap-2">
             <Lock className="h-4 w-4" />
@@ -256,7 +256,7 @@ function Hero() {
 function TrustBar() {
   const stats = [
     { value: "10x", label: "Faster Chronologies", icon: Zap },
-    { value: "100%", label: "HIPAA Compliant", icon: Shield },
+    { value: "256-bit", label: "Encrypted & Secure", icon: Shield },
     { value: "68%", label: "Less Admin Time", icon: Clock },
     { value: "$49", label: "Starting Price", icon: DollarSign },
   ];
@@ -581,8 +581,8 @@ function PlatformFeatures() {
     },
     {
       icon: Shield,
-      title: "Security & HIPAA",
-      desc: "AES-256 encryption, TLS 1.3, role-based access control, 2FA, audit trails, and AWS infrastructure with BAA.",
+      title: "Enterprise Security",
+      desc: "AES-256 encryption, TLS 1.3, role-based access control, two-factor authentication, and full audit trails on AWS infrastructure.",
       bg: "https://images.unsplash.com/photo-1767972464040-8bfee42d7bed?auto=format&fit=crop&w=800&q=80",
     },
   ];
@@ -901,7 +901,7 @@ function Pricing() {
           viewport={{ once: true }}
           className="mt-8 text-center text-sm text-navy-dark/50 max-w-2xl mx-auto"
         >
-          All platform plans include a 14-day free trial. No credit card required. HIPAA-compliant infrastructure included.
+          All platform plans include a 14-day free trial. No credit card required.
         </motion.p>
 
         {/* ── AI Solutions Add-Ons ── */}
@@ -1000,8 +1000,8 @@ function Pricing() {
 function FAQ() {
   const faqs = [
     {
-      q: "Is LegalSuite HIPAA compliant?",
-      a: "LegalSuite is built on AWS infrastructure with a signed Business Associate Agreement (BAA). We use AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls, two-factor authentication, and full audit trails with 6-year retention \u2014 meeting all HIPAA technical safeguard requirements. All new law firms are required to sign a Business Associate Agreement (BAA) with LegalSuite before accessing the platform, ensuring full HIPAA compliance chain from our infrastructure to your practice.",
+      q: "How secure is LegalSuite?",
+      a: "LegalSuite is built on AWS infrastructure with AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls, two-factor authentication, and full audit trails. Your data is protected with the same enterprise-grade security used by Fortune 500 companies.",
     },
     {
       q: "How does the AI medical chronology work?",
@@ -1025,7 +1025,7 @@ function FAQ() {
     },
     {
       q: "What file types are supported for document uploads?",
-      a: "LegalSuite supports PDF, DOC, DOCX, JPG, PNG, TIFF, and TXT files up to 50MB each. All files are encrypted at rest using AES-256 and stored on HIPAA-eligible AWS S3 infrastructure.",
+      a: "LegalSuite supports PDF, DOC, DOCX, JPG, PNG, TIFF, and TXT files up to 50MB each. All files are encrypted at rest using AES-256 and stored securely on AWS S3 infrastructure.",
     },
     {
       q: "Do you offer onboarding support?",
@@ -1212,7 +1212,7 @@ function Footer() {
 
         <div className="mt-6 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/40">
           <span className="flex items-center gap-1.5">
-            <Shield className="h-3.5 w-3.5" /> HIPAA Compliant Infrastructure
+            <Shield className="h-3.5 w-3.5" /> Enterprise-Grade Security
           </span>
           <span className="flex items-center gap-1.5">
             <Lock className="h-3.5 w-3.5" /> AES-256 Encryption
