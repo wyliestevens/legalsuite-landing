@@ -764,12 +764,12 @@ function Pricing() {
       tier: "Starter",
       monthly: 297,
       setup: 597,
-      desc: "One core AI tool configured for your firm.",
+      desc: "One AI tool configured for your practice area.",
       features: [
-        "Pick one: Chatbot, Voice, or Reviews",
-        "Configured for your practice area",
-        "Connected to calendar and CRM",
-        "Monthly performance check-in",
+        "Pick one: Intake Chatbot, AI Receptionist, or Review Automation",
+        "Tailored to your practice (PI, family, criminal, estate, etc.)",
+        "Connected to your calendar for consultation booking",
+        "Monthly performance report with lead metrics",
       ],
       popular: false,
     },
@@ -777,13 +777,13 @@ function Pricing() {
       tier: "Growth",
       monthly: 497,
       setup: 797,
-      desc: "Three AI tools working together as one system.",
+      desc: "Three AI tools converting more leads into signed clients.",
       features: [
-        "AI Chatbot on your website",
-        "AI Voice Assistant for every call",
-        "Automated Reputation Management",
-        "All tools connected to one CRM",
-        "Booking and follow-up automation",
+        "AI Client Intake Chatbot — qualifies leads and books consultations 24/7",
+        "AI Receptionist — answers every call, never puts a potential client on hold",
+        "Automated Review Management — Google, Avvo, and Lawyers.com",
+        "All leads flow into your case pipeline automatically",
+        "Automated follow-up sequences so no lead goes cold",
       ],
       popular: true,
     },
@@ -791,14 +791,14 @@ function Pricing() {
       tier: "Peak Performance",
       monthly: 797,
       setup: 997,
-      desc: "Full AI infrastructure. Website, tools, and automation.",
+      desc: "Full AI client acquisition system built for your firm.",
       features: [
-        "Professional website built and hosted",
-        "AI Chatbot + Voice + Reviews",
-        "Full CRM with pipeline management",
-        "No-show prevention",
-        "Reactivation campaigns",
-        "Missed call text-back",
+        "Professional law firm website — built, hosted, and optimized",
+        "AI Intake Chatbot + Receptionist + Review Automation",
+        "Full lead-to-signed-client pipeline automation",
+        "Missed call text-back — captures leads after hours",
+        "Dormant lead reactivation campaigns",
+        "Consultation no-show prevention sequences",
       ],
       popular: false,
     },
@@ -916,13 +916,13 @@ function Pricing() {
               <Brain className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-navy-dark">AI Solutions Add-Ons</h3>
-              <p className="text-sm text-navy-dark/50">Supercharge your firm with AI-powered client tools</p>
+              <h3 className="text-xl font-bold text-navy-dark">AI Solutions for Law Firms</h3>
+              <p className="text-sm text-navy-dark/50">Turn more leads into signed clients — on autopilot</p>
             </div>
           </div>
           <p className="text-sm text-navy-dark/60 max-w-2xl mt-3">
-            Add AI-powered client acquisition and communication tools to your LegalSuite platform.
-            These services work alongside your existing plan to bring in more clients and automate follow-ups.
+            Your firm loses potential clients every day to missed calls, slow follow-ups, and after-hours inquiries.
+            These AI tools work 24/7 alongside your LegalSuite platform to capture, qualify, and convert every lead.
           </p>
         </motion.div>
 
@@ -988,8 +988,8 @@ function Pricing() {
           viewport={{ once: true }}
           className="mt-8 text-center text-sm text-navy-dark/50 max-w-3xl mx-auto leading-relaxed"
         >
-          AI Solutions are add-ons to any LegalSuite plan. Voice calls billed at $0.12/min.
-          Chatbot messages billed at $0.01/msg. Month-to-month, cancel anytime.
+          AI Solutions are add-ons to any LegalSuite plan. AI Receptionist calls billed at $0.12/min.
+          Intake Chatbot messages billed at $0.01/msg. Month-to-month, cancel anytime.
         </motion.p>
       </div>
     </section>
