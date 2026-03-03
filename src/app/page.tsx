@@ -642,22 +642,32 @@ function PlatformFeatures() {
   );
 }
 
-// ─── BUILT FOR PI ────────────────────────────────
+// ─── BUILT FOR EVERY LAW FIRM ────────────────────
 function BuiltForPI() {
+  const practiceAreas = [
+    "Personal Injury",
+    "Family Law",
+    "Criminal Defense",
+    "Estate Planning",
+    "Immigration",
+    "Employment Law",
+    "Real Estate",
+    "Business Litigation",
+  ];
   const benefits = [
     {
-      title: "Medical Chronology Integration",
-      desc: "The only platform where your AI chronologies live right next to case files, client records, and billing \u2014 no exports needed.",
-      bg: "https://images.unsplash.com/photo-1758691462814-485c3672e447?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Built by Legal Nurse Consultants",
-      desc: "Designed by professionals who understand personal injury workflows, medical terminology, and what matters at trial.",
+      title: "Works for Any Practice Area",
+      desc: "Customizable workflows, case stages, and document templates adapt to your firm \u2014 whether you handle PI, family law, criminal defense, estate planning, or any other practice.",
       bg: "https://images.unsplash.com/photo-1562673462-877b3612cbea?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Competitive Edge",
-      desc: "Competitors charge $150 to $300+ per hour for medical chronology services. LegalSuite gives you AI-powered chronologies for pennies per page \u2014 saving your firm thousands on every case.",
+      title: "AI Medical Chronology for PI",
+      desc: "Personal injury firms get a built-in AI chronology tool that turns thousands of medical records into organized timelines for pennies per page \u2014 saving thousands on every case.",
+      bg: "https://images.unsplash.com/photo-1758691462814-485c3672e447?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      title: "One Platform, Entire Firm",
+      desc: "Cases, clients, billing, documents, calendars, messaging, e-signatures, and team management \u2014 everything your firm needs in a single place. No more juggling five different tools.",
       bg: "https://images.unsplash.com/photo-1759701546980-1211be084c70?auto=format&fit=crop&w=800&q=80",
     },
   ];
@@ -668,18 +678,36 @@ function BuiltForPI() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-navy-dark">
-            Purpose-Built for{" "}
+            Built for{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal to-emerald">
-              Personal Injury
+              Every Law Firm
             </span>
           </h2>
           <p className="mt-4 text-lg text-navy-dark/60 max-w-2xl mx-auto">
-            Generic legal software treats PI like an afterthought. LegalSuite was built
-            from the ground up for personal injury practices and legal nurse consultants.
+            From solo practitioners to growing firms, LegalSuite adapts to how you practice.
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap items-center justify-center gap-3 mb-14"
+        >
+          {practiceAreas.map((area) => (
+            <span
+              key={area}
+              className="px-4 py-1.5 rounded-full bg-teal/10 text-teal text-sm font-medium"
+            >
+              {area}
+            </span>
+          ))}
+          <span className="px-4 py-1.5 rounded-full bg-navy-dark/5 text-navy-dark/50 text-sm font-medium">
+            + More
+          </span>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
