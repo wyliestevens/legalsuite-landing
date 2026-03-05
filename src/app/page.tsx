@@ -741,7 +741,7 @@ function BuiltForPI() {
 function Pricing() {
   const platformPlans = [
     {
-      name: "Foundation",
+      name: "Starter",
       price: 49,
       unit: "per user/month",
       desc: "Everything a small firm needs to get organized.",
@@ -756,29 +756,31 @@ function Pricing() {
       popular: false,
     },
     {
-      name: "Advantage",
-      price: 99,
+      name: "Professional",
+      price: 109,
       unit: "per user/month",
       desc: "For growing firms that need more power and storage.",
       features: [
         "Unlimited users",
         "Up to 75 active cases",
         "Document storage (50 GB)",
+        "AI Medical Chronology — 500 pages/mo included",
+        "$0.18/page overage after 500 pages",
         "E-signature & PDF forms",
-        "Advanced reporting",
         "Priority email support",
       ],
       popular: true,
     },
     {
-      name: "Command",
-      price: 199,
+      name: "Enterprise",
+      price: 159,
       unit: "per user/month",
       desc: "Full platform for firms that want it all.",
       features: [
         "Unlimited users & cases",
         "Unlimited storage",
-        "AI Medical Chronology included",
+        "AI Medical Chronology — 2,000 pages/mo included",
+        "$0.15/page overage after 2,000 pages",
         "Custom workflows & playbooks",
         "API access & integrations",
         "Dedicated account manager",
