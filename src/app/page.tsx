@@ -934,6 +934,59 @@ function Pricing() {
           All platform plans include a 14-day free trial. No credit card required.
         </motion.p>
 
+        {/* ── AI Medical Chronology Page Packs ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 mb-6"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-navy-dark to-navy-dark/80 flex items-center justify-center">
+              <FileText className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-navy-dark">AI Medical Chronology</h3>
+              <p className="text-sm text-navy-dark/50">Available as an add-on to any plan</p>
+            </div>
+          </div>
+          <p className="text-sm text-navy-dark/60 max-w-2xl mt-3">
+            Upload medical records and get an AI-generated chronology in minutes, not days. Buy page packs as needed — pages never expire and packs stack.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+          {[
+            { name: "Starter", pages: 100, price: 25, perPage: "0.25" },
+            { name: "Standard", pages: 500, price: 100, perPage: "0.20" },
+            { name: "Pro", pages: "1,000", price: 175, perPage: "0.175" },
+            { name: "Bulk", pages: "2,500", price: 325, perPage: "0.13" },
+          ].map((pack, i) => (
+            <motion.div
+              key={pack.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="bg-white rounded-xl border border-gray-border p-6 text-center"
+            >
+              <p className="text-xs font-bold uppercase tracking-widest text-teal">{pack.name}</p>
+              <p className="text-3xl font-extrabold text-navy-dark mt-3">${pack.price}</p>
+              <p className="text-sm text-navy-dark/60 mt-1">{pack.pages} pages</p>
+              <p className="text-xs text-navy-dark/40 mt-2">${pack.perPage}/page</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-6 text-center text-sm text-navy-dark/50 max-w-2xl mx-auto"
+        >
+          Pages never expire. Purchase additional packs anytime — balances stack automatically.
+        </motion.p>
+
         {/* ── AI Solutions Add-Ons ── */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
